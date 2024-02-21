@@ -8,14 +8,57 @@
   <title>Firmas</title>
   <link rel="manifest" href="./manifest.json">
   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1376/1376298.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body style=" margin: 0; padding: 0; height: 100vh; display: flex;">
-  <iframe
+
+  <section class='vh-100 w-100 pt-5 bg_two-nocturne' id="loading">
+    <div class="w-100 text-center pt-5">
+      <span class="loader"></span>
+      <div>
+        <span class='loaderLogin-Text loaderLogin-Text_ligth' id='loginText'>
+          Loading...
+        </span>
+      </div>
+    </div>
+    <svg id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg"
+      class="transition duration-300 ease-in-out delay-150 position-absolute bottom-0">
+      <path
+        d="M 0,400 C 0,400 0,100 0,100 C 81.53110047846889,107.26315789473685 163.06220095693777,114.52631578947368 275,121 C 386.9377990430622,127.47368421052632 529.2822966507177,133.15789473684208 626,129 C 722.7177033492823,124.8421052631579 773.8086124401915,110.8421052631579 867,104 C 960.1913875598085,97.1578947368421 1095.4832535885166,97.4736842105263 1198,98 C 1300.5167464114834,98.5263157894737 1370.2583732057417,99.26315789473685 1440,100 C 1440,100 1440,400 1440,400 Z"
+        stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.4"
+        class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+      <path
+        d="M 0,400 C 0,400 0,200 0,200 C 131.20574162679424,193.07177033492823 262.4114832535885,186.14354066985646 338,188 C 413.5885167464115,189.85645933014354 433.5598086124403,200.4976076555024 525,214 C 616.4401913875597,227.5023923444976 779.3492822966507,243.86602870813397 891,232 C 1002.6507177033493,220.13397129186603 1063.043062200957,180.03827751196172 1146,170 C 1228.956937799043,159.96172248803828 1334.4784688995214,179.98086124401914 1440,200 C 1440,200 1440,400 1440,400 Z"
+        stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53"
+        class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+          <stop offset="5%" stop-color="#281c81"></stop>
+          <stop offset="95%" stop-color="#8ED1FC"></stop>
+        </linearGradient>
+      </defs>
+      <path
+        d="M 0,400 C 0,400 0,300 0,300 C 107.82775119617227,306.81339712918657 215.65550239234454,313.6267942583732 304,312 C 392.34449760765546,310.3732057416268 461.2057416267942,300.3062200956938 547,298 C 632.7942583732058,295.6937799043062 735.5215311004786,301.14832535885165 846,301 C 956.4784688995214,300.85167464114835 1074.7081339712918,295.10047846889955 1175,294 C 1275.2918660287082,292.89952153110045 1357.6459330143541,296.4497607655502 1440,300 C 1440,300 1440,400 1440,400 Z"
+        stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1"
+        class="transition-all duration-300 ease-in-out delay-150 path-2"></path>
+    </svg>
+  </section>
+  <iframe 
+    id="sign"
+    onload="onLoadFrame()"
     src="https://script.google.com/a/macros/servinformacion.com/s/AKfycbxkBF20IzEw7LgtnQfIOH0w0DWFrhyKpwbZA3vHwIs94KbrTSOQZpwGqbyzxiL6Wne4/exec"
-    frameborder="0" width="100%" height="100%"></iframe>
+    frameborder="0" width="100%" height="100%" style="display:none"></iframe>
 </body>
-
+<script>
+  const onLoadFrame = () =>{
+    setTimeout(()=>{
+      loading.style = 'display:none';
+      sign.style = '';
+    })
+  }
+</script>
 <script src="./script.js"></script>
-
 </html>
